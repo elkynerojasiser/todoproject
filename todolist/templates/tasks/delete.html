@@ -1,0 +1,26 @@
+{% extends "layouts/base.html" %}
+
+{% block content %}
+
+<div class="d-flex justify-content-center align-items-center pt-5 pb-5">
+    <h1 class="text-center">
+        Delete task
+    </h1>
+</div>
+
+<div class="row">
+    <div class="col-sm-12 d-flex justify-content-center pb-5">
+        <h4 class="text-center">Are you sure to delete task {{ task.title }} ?</h4>
+    </div>
+</div>
+
+<div class="row d-flex justify-content-center align-items-center">
+    <div class="col-sm-1">
+        <a href="{% url 'tasks.destroy' task.id %}" class="btn btn-danger">Delete</a>
+    </div>
+    <div class="col-sm-1">
+        <a href="{% url 'tasks.list' %}" class="btn btn-success">Cancel</a>
+    </div>
+</div>
+
+{% endblock %}
