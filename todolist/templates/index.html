@@ -6,6 +6,21 @@
     <h1 class="text-center">
         Todo List App
     </h1>
+    
+</div>
+<div class="container">
+    <div class="row d-flex justify-content-center align-items-center">
+        {% if user.is_authenticated %}
+        <h3 class="text-center pt-5 mb-5">
+            Bienvenido {{ user.get_username }}
+        </h3>
+        {% else %}
+        <div class="col-sm-3 d-flex justify-content-center align-items-center">
+            <a href="{% url 'login.form' %}" class="btn btn-primary">Login</a>
+        </div>
+        
+        {% endif %}
+    </div>
 </div>
 
 {% endblock %}
