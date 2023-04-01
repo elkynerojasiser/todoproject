@@ -19,5 +19,10 @@ urlpatterns = [
     path('task-edit/<int:task_id>/',views.showUpdateTaskForm, name="tasks.edit"),
     path('task-update/<int:task_id>/',views.updateTask, name="tasks.update"),
     path('task-delete/<int:task_id>/',views.confirmDeleteTask, name="tasks.delete"),
-    path('task-destroy/<int:task_id>/',views.destroyTask, name="tasks.destroy")
+    path('task-destroy/<int:task_id>/',views.destroyTask, name="tasks.destroy"),
+    path('signup-form/',views.showSignupForm,name="signup.form"),
+    path('signup/',views.signup, name="signup.store"),
+    path('login-form/',views.showLoginForm, name="login.form"),
+    path('login/',views.startSession, name="login.store"),
+    path('logout/',views.finishSession, name="logout")
 ]

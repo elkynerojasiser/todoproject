@@ -1,0 +1,46 @@
+{% extends "layouts/base.html" %}
+
+{% block content %}
+
+<div class="d-flex justify-content-center align-items-center pt-5 pb-5">
+    <h1 class="text-center">
+        Signup
+    </h1>
+</div>
+<div>
+    <form action="{% url 'signup.store' %}" method="POST" class="pt-5">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="firstname" class="form-label">Firstname</label>
+            <input type="text" class="form-control" id="firstname" name="firstname" required>
+        </div>
+        <div class="mb-3">
+            <label for="lastname" class="form-label">Lastname</label>
+            <input type="text" class="form-control" id="lastname" name="lastname" required>
+        </div>
+        <div class="mb-3">
+            <label for="username" class="form-label">Username</label>
+            <input type="text" class="form-control" id="username" name="username" required>
+        </div>
+        <div class="mb-3">
+            <label for="username" class="form-label">Email</label>
+            <input type="email" class="form-control" id="email" name="email" required>
+        </div>
+        <div class="mb-3">
+            <label for="password1" class="form-label">Password</label>
+            <input type="password" class="form-control" id="password1" name="password1" required>
+        </div>
+        <div class="mb-3">
+            <label for="password2" class="form-label">Confirm Password</label>
+            <input type="password" class="form-control" id="password2" name="password2" required>
+        </div>
+        <div class="row">
+            <div class="col-sm-12 justify-content-start">
+                <button type="submit" class="btn btn-primary">Signup</button>
+                <a href="{% url 'landing' %}" class="btn btn-warning">Cancel</a>
+            </div>
+        </div>
+        
+    </form>
+</div>
+{% endblock %}
