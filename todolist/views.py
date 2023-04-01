@@ -79,7 +79,7 @@ def tasks(request):
 
 @login_required
 def showCreateTaskForm(request):
-    projects = Project.objects.all()
+    projects = Project.objects.filter(user=request.user)
     return render(request,'tasks/create.html',{
         "projects" : projects
     })
@@ -98,7 +98,7 @@ def storeTask(request):
 
 @login_required
 def showUpdateTaskForm(request, task_id):
-    projects = Project.objects.all()
+    projects = Project.objects.filter(user=request.user)
     task = get_object_or_404(Task, id=task_id)
     return render(request,'tasks/update.html',{
         "projects" : projects,
